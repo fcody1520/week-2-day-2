@@ -279,7 +279,13 @@ const employees = [
 ];
 // Do not edit the code above.
 
-// REPLACE THIS WITH YOUR CODE
+let findProgrammer = (employees) => {
+  employees.filter((obj) => obj.job === 'programmer')
+  return obj
+}
+
+
+
 
 ////////// PROBLEM 12 //////////
 
