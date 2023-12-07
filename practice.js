@@ -240,7 +240,7 @@ const startWithLetterA = (arr) => arr.filter((word) => word[0].toLowerCase() ===
 // Make sure to use arrow functions combined with the map method.
 
 let formalGreeting = (arr) => 
-  arr.map(name => `Hello, ` + name);
+  arr.map((name) => { return `Hello, ` + name});
 
 // ask question about wrapping in curly brackets
 
@@ -279,11 +279,13 @@ const employees = [
 ];
 // Do not edit the code above.
 
-let findProgrammer = (employees) => {
-  employees.filter((obj) => obj.job === 'programmer')
-  return obj
-}
 
+function findProgrammer(empList){
+  let newArray = empList.filter((obj) => {
+   return obj.job === 'programmer'
+   })
+   return newArray[0]
+}
 
 
 
@@ -312,7 +314,7 @@ const orders = [
   Example: if tax is 0.07, the price afterTax could be calculated like this: afterTax = price * 1.07)
 */
 
-let orderTotals; // Code here
+let orderTotals = orders.map((order)=> { return order.price * (1 + order.tax)})
 
 /// /////// PROBLEM 13 //////////
 
@@ -328,7 +330,13 @@ const exampleMenuItems = [
 // Create a function called sortMenuItems which takes in an array of objects like the one above
 // and sorts the array by price from smallest to largest. It should return the sorted array.
 
-// REPLACE THIS WITH YOUR CODE
+let sortMenuItems = (arr) => {
+  arr.sort((a,b) => {
+    return a.price - b.price;
+  })
+  return
+}
+
 
 /// /////// PROBLEM 14 //////////
 
@@ -338,4 +346,8 @@ const exampleMenuItems = [
 //
 // Make sure to use arrow functions combined with the reduce method.
 
-// REPLACE THIS WITH YOUR CODE
+const productOfArray = (arr)=> {
+  arr.reduce((acc, curr) => {
+    return acc + curr
+  }, 0)
+}
